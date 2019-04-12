@@ -9,7 +9,6 @@ gem 'rails', '~> 5.2.2'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -38,6 +37,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'sqlite3', '~> 1.3', '>= 1.3.11'
 end
 
 group :development do
@@ -49,6 +49,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :production do
+  gem 'pg', '~> 0.11'
+end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
