@@ -14,17 +14,56 @@
 
 <% end %>
 
-<%= form_for @article do |f| %>
-    <p>
-        <%=f.label :title %><br/>
-        <%=f.text_field :title %>
-    </p>
-    <p>
-        <%=f.label :description %><br/>
-        <%=f.text_area :description %>
-    </p>
-    <p>
-        <%=f.submit %>
-    </p>
+<%= form_for @article do |f|  %>
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <%=f.label :title,class:"label" %><br/>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <%=f.text_field :title, class: "input", placeholder:"Title of article" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <%=f.label :description,class:"label" %><br/>
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <%=f.text_field :description, class: "textarea", placeholder:"Body of article" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="field is-horizontal">
+  <div class="field-label">
+    <!-- Left empty for spacing -->
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <%=f.submit class: "button is-success"%>
+      </div>
+    </div>
+  </div>
+</div>
+
 <%end%>
-<%= link_to "Go Back", articles_path %>
+<br/>
+<div class="field is-horizontal">
+  <div class="field-label">
+    <!-- Left empty for spacing -->
+  </div>
+  <div class="field-body">
+    <div class="field">
+      <div class="control">
+        <%= link_to "Go Back", articles_path, class: "button is-primary"  %>
+      </div>
+    </div>
+  </div>
+</div>
