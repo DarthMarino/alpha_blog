@@ -16,25 +16,29 @@
 
 <%= form_for @article do |f|  %>
 <div class="field is-horizontal">
-  <div class="field-label is-normal">
-    <%=f.label :title,class:"label" %><br/>
-  </div>
-  <div class="field-body">
-    <div class="field">
-      <div class="control">
-        <%=f.text_field :title, class: "input", placeholder:"Title of article" %>
+    <div class="field-label is-normal">
+      <%=f.label :title,class:"label" %><br/>
+    </div>
+    <div class="field-body">
+      <div class="field">
+          <div style="width:750px;margin:left">
+            <div class="control">
+              <%=f.text_field :title, class: "input is-hovered", placeholder:"Title of article"%>
+            </div>
+          </div>
       </div>
     </div>
-  </div>
 </div>
 <div class="field is-horizontal">
   <div class="field-label is-normal">
     <%=f.label :description,class:"label" %><br/>
   </div>
-  <div class="field-body">
+  <div class="field-body is-normal">
     <div class="field">
-      <div class="control">
-        <%=f.text_field :description, class: "textarea", placeholder:"Body of article" %>
+      <div style="width:750px;margin:left">
+        <div class="control">
+          <%=f.text_area :description,class:"textarea is-hovered", placeholder: "Body of the article"%>
+        </div>
       </div>
     </div>
   </div>
@@ -62,7 +66,7 @@
   <div class="field-body">
     <div class="field">
       <div class="control">
-        <%= link_to "Go Back", articles_path, class: "button is-primary"  %>
+        <%= link_to "Go Back", articles_path, class: "button is-danger"  %>
       </div>
     </div>
   </div>
