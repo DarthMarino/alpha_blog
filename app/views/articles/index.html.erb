@@ -6,23 +6,19 @@
 
 <p>
 
-<%= link_to "Create new article", new_article_path %>
-
 </p>
-
-<table style = "font-family:Arial;font-size:16px;font-style:bold;">
-    <tr>
-        <th>Title</th>
-        <th>Description</th>
-    </tr>
-
     <% @articles.each do |article| %>
-        <tr>
-            <td><%= article.title%></td>
-            <td><%= article.description%></td>
-            <td><%= link_to 'Edit', edit_article_path(article) %></td>
-            <td><%= link_to 'Show', article_path(article) %></td>
-            <td><%= link_to 'Delete', article_path(article), method: :delete,data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+    <div box1>
+        <div class="box">
+            <p style= "font-family:Arial;font-size:28px;font-style:bold;"><%= link_to article.title, article_path(article)%></p>
+            <p style= "font-family:Arial;font-size:18px;font-style:bold;border-top: 1px solid #eaeaea;"><%= truncate(article.description,length: 100)%></p>
+            <div style="border-top: 1px solid #eaeaea;">
+                <div class = "column">
+                <%= link_to 'Edit this article', edit_article_path(article), class: "button is-small is-primary is-outlined" %>
+                <%= link_to 'Delete this article', article_path(article), method: :delete,data: { confirm: 'Are you sure?' }, class: "button is-small is-danger is-outlined" %>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <br>
     <%end%>
-</table>

@@ -1,16 +1,16 @@
 <% if obj.errors.any? %>
-<div class="container is-fluid">
-  <article class="message is-danger">
-    <div class="message-body">
-      <h1 style = "font-family:Arial;font-size:24px;font-style:bold;">
-      <%= pluralize(obj.errors.count, "error")%> prevented the article from getting created:</h1>
-      <div style= "text-indent: 5%;">
-        <% obj.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
+  <div class="container is-fluid">
+    <article class="message is-danger">
+      <div class="message-body">
+        <h1 style = "font-family:Arial;font-size:24px;font-style:bold;">
+        <%= pluralize(obj.errors.count, "error")%> prevented the article from getting created:</h1>
+        <div style= "text-indent: 5%;">
+          <% obj.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </div>
       </div>
-    </div>
-  </article>
-</div>
-<br/>
+    </article>
+  </div>
+  <br/>
 <% end %>
