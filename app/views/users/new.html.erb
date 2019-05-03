@@ -3,55 +3,5 @@
     <h1 style = "font-family:Arial;font-size:42px;font-style:bold;">Signup for AlphaBlog </h1>
 </div>
 <%= render 'shared/errors', obj: @user %>
+<%= render 'form' %>
 
-<%= form_for @user do |f|  %>
-<div class="field">
-  <strong><%=f.label :username,class:"field-label" %></strong>
-  <div class="control has-icons-left has-icons-right">
-    <%=f.text_field :username, class: "input is-hovered", placeholder:"Enter your Username"%>
-    <i class="fas fa-user"><%= image_tag 'user.png',class:"icon is-small is-left" %></i>
-  </div>
-</div>
-
-<div class="field">
-  <strong><%=f.label :email,class:"field-label" %></strong>
-  <div class="control has-icons-left has-icons-right">
-    <%=f.email_field :email, class: "input is-hovered", placeholder:"Enter your Email"%>
-    <i class="fas fa-user"><%= image_tag 'mail.png',class:"icon is-small is-left" %></i>
-  </div>
-</div>
-<div class="field">
-  <strong><%=f.label :password,class:"field-label" %></strong>
-  <div class="control has-icons-left has-icons-right">
-    <%=f.password_field :password, class: "input is-hovered", placeholder:"Enter your Password"%>
-    <i class="fas fa-user"><%= image_tag 'key.png',class:"icon is-small is-left" %></i>
-  </div>
-</div>
-
-<div class="field is-horizontal">
-  <div class="field-label">
-    <!-- Left empty for spacing -->
-  </div>
-  <div class="field-body">
-    <div class="field">
-      <div class="control">
-        <%=f.submit class: "button is-success"%>
-      </div>
-    </div>
-  </div>
-</div>
-
-<%end%>
-<br/>
-<div class="field is-horizontal">
-  <div class="field-label">
-    <!-- Left empty for spacing -->
-  </div>
-  <div class="field-body">
-    <div class="field">
-      <div class="control">
-        <%= link_to "Go Back", articles_path, class: "button is-danger"  %>
-      </div>
-    </div>
-  </div>
-</div>

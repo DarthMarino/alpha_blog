@@ -1,0 +1,14 @@
+<%= render 'layouts/navigation' %>
+<%= render 'layouts/messages' %>
+<div align="center">
+    <h1 style = "font-family:Arial;font-size:42px;font-style:bold;">Welcome to <%=@user.username%>'s page</h1>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 center">
+            <%= gravatar_for @user, size: 150 %>
+        </div>
+    </div>
+    <h4 style = "font-family:Arial;font-size:20px;font-style:bold;"><%= @user.username %>'s articles</h4>
+</div>
+
+<%= render 'articles/article', obj: @user.articles %>
+<br>

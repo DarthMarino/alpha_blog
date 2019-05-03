@@ -7,23 +7,4 @@
 <p>
 
 </p>
-    <% @articles.each do |article| %>
-    <div box1>
-        <div class="box">
-            <p style= "font-family:Arial;font-size:28px;font-style:bold;border-bottom: 1px solid #eaeaea;"><%= link_to article.title, article_path(article)%></p>
-            <p style= "font-family:Arial;font-size:18px;font-style:bold;margin-top:10px;"><%= truncate(article.description,length: 100)%></p>
-            <div class = "article-meta-details">
-                <small>Created by: <%= article.user.username if article.user %>, 
-                <%=time_ago_in_words(article.created_at)%> ago, 
-                Last updated: <%= time_ago_in_words(article.updated_at)%> ago</small>
-            </div>
-            <div style="border-top: 1px solid #eaeaea;">
-                <div class = "column">
-                    <%= link_to 'Edit this article', edit_article_path(article), class: "button is-small is-primary is-outlined" %>
-                    <%= link_to 'Delete this article', article_path(article), method: :delete,data: { confirm: 'Are you sure?' }, class: "button is-small is-danger is-outlined" %>
-                </div> 
-            </div>
-        </div>
-    </div>
-    <br>
-    <%end%>
+<%=render 'article', obj:@articles%>
