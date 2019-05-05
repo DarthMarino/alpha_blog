@@ -4,7 +4,7 @@
     <h1 style = "font-family:Arial;font-size:42px;font-style:bold;">Listing all Articles </h1>
 </div>
 
-<p>
-
-</p>
+<br>
 <%=render 'article', obj:@articles%>
+<%= pagy_bulma_nav(@pagy).html_safe %>
+<br>

@@ -28,12 +28,16 @@
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <div class="buttons">
-             <%= link_to 'Signup', users_signup_path, class: "button is-primary" %>
-          <a class="button is-light">
-            Log in
-          </a>
-        </div>
+      <% if logged_in? %>
+          <div class="buttons">
+            <%= link_to 'Log out', users_logout_path, method: :delete, class:"button is-light"%>
+          </div>
+        <% else %>
+          <div class="buttons">
+            <%= link_to 'Signup', users_signup_path, class: "button is-primary" %>
+            <%= link_to 'Log in', users_login_path, class: "button is-light" %>
+        </div> 
+        <%end%>
       </div>
     </div>
   </div>

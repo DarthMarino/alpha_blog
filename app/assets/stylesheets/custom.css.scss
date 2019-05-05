@@ -3,4 +3,14 @@
     border-top: 1px solid #eaeaea;
     margin-top: 10px;
 }
+.usuariosCards{
+    width:50%;
+}
+.radiobonito{
+    -webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+border: 1px solid rgba(0, 0, 0, 0.226);
+max-width:800px
+}
 @import "bulma";

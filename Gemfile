@@ -7,6 +7,8 @@ gem 'jquery-rails'
 gem 'rails', '~> 5.2.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+gem 'will_paginate', '~> 3.1.0'
+gem 'pagy'
 gem 'bcrypt', '~> 3.1.7'
 # Use SCSS for stylesheets
 gem "bulma-rails", "~> 0.7.4"

@@ -1,0 +1,26 @@
+<%= render 'layouts/navigation' %>
+<%= render 'layouts/messages' %>
+<div align="center">
+    <h1 style = "font-family:Arial;font-size:42px;font-style:bold;">All AlphaBloggers</h1>
+</div>
+<% @users.each do |user|%>
+<div align ="center">
+  <div class= "usuariosCards">
+    <div class="card is-centered">
+      <div class="card-content">
+        <p class="title">
+          <%= link_to gravatar_for(user), user_path(user) %>
+        </p>
+        <p class ="title">
+        <%= link_to user.username, user_path(user) %>
+        </p>
+        <p class = "subtitle">
+          <%= pluralize(user.articles.count, "article") if user.articles %>    
+        </p>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+<%end%>
+<%= pagy_bulma_nav(@pagy).html_safe %>

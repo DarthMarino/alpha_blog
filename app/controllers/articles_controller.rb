@@ -1,9 +1,9 @@
 class ArticlesController < ApplicationController
-  
+  include Pagy::Backend
   before_action :set_article, only: [:edit, :update, :show, :destroy]
 
   def index
-    @articles = Article.all
+    @pagy, @articles = pagy(Article.all, page: params[:page], items: 5)
   end
 
   def new
