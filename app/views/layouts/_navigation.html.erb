@@ -14,15 +14,11 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
       <p class="navbar-item">
-        <%= link_to 'Home', root_path %>
+        <%= link_to 'Home', articles_path %>
       </p>
 
       <p class="navbar-item">
         <%= link_to 'About', about_path %>
-      </p>
-
-      <p class="navbar-item">
-        <%= link_to 'New', new_article_path %>
       </p>
     </div>
 
@@ -30,7 +26,32 @@
       <div class="navbar-item">
       <% if logged_in? %>
           <div class="buttons">
-            <%= link_to 'Log out', users_logout_path, method: :delete, class:"button is-light"%>
+            <div class="dropdown is-right">
+              <div class="dropdown-trigger">
+                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                  <span>Options</span>
+                    <span>
+                      <i class="fas fa-user"><%= image_tag 'down-arrow.png',class:"is-right" %></i>
+                    </span>
+                </button>
+              </div>
+              <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <%= link_to 'New', new_article_path, class:"dropdown-item" %>
+                  <a class="dropdown-item">
+                    Other dropdown item
+                  </a>
+                  <a href="#" class="dropdown-item">
+                    Active dropdown item
+                  </a>
+                  <a href="#" class="dropdown-item">
+                    Other dropdown item
+                  </a>
+                  <hr class="dropdown-divider">
+                    <%= link_to 'Log out', users_logout_path, method: :delete, class:"dropdown-item"%>
+                </div>
+              </div>
+            </div>
           </div>
         <% else %>
           <div class="buttons">

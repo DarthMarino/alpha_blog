@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.1'
+ruby '2.6.3'
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
@@ -9,7 +9,7 @@ gem 'rails', '~> 5.2.2'
 gem 'puma', '~> 3.11'
 gem 'will_paginate', '~> 3.1.0'
 gem 'pagy'
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '3.1.12', platforms: [:ruby, :x64_mingw]    
 # Use SCSS for stylesheets
 gem "bulma-rails", "~> 0.7.4"
 gem 'sass-rails', '~> 5.0'
@@ -54,7 +54,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '~> 0.11'
+  gem 'pg', '~> 0.18.4'
 end
 
 group :test do
