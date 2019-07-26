@@ -2,14 +2,16 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.2'
+gem 'rails', '~> 5.2.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 gem 'will_paginate', '~> 3.1.0'
 gem 'pagy'
-gem 'bcrypt', '3.1.12', platforms: [:ruby, :x64_mingw]    
+#gem 'bcrypt', '~> 3.1.11'
+gem 'bcrypt', '~> 3.1.13', platforms: [:ruby, :x64_mingw, :mingw]
 # Use SCSS for stylesheets
 gem "bulma-rails", "~> 0.7.4"
 gem 'sass-rails', '~> 5.0'

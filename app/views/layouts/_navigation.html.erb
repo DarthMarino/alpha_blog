@@ -1,7 +1,9 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <p class="navbar-item">
-      <img src="https://i.imgur.com/7h4bBwY.png" width="112" height="28">
+      <%= link_to href: 'http://www.example.com/' do %>
+        <img src="https://i.imgur.com/7h4bBwY.png" width="112" height="28"> 
+        <%end%>
     </p>
 
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -14,44 +16,24 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
       <p class="navbar-item">
-        <%= link_to 'Home', articles_path %>
+        <%= link_to 'Home', root_path %>
       </p>
 
       <p class="navbar-item">
         <%= link_to 'About', about_path %>
       </p>
+      <% if logged_in? %>
+        <p class="navbar-item">
+          <%= link_to 'Create Article', new_article_path %>
+        </p>
+      <%end%>
     </div>
 
     <div class="navbar-end">
       <div class="navbar-item">
       <% if logged_in? %>
           <div class="buttons">
-            <div class="dropdown is-right">
-              <div class="dropdown-trigger">
-                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                  <span>Options</span>
-                    <span>
-                      <i class="fas fa-user"><%= image_tag 'down-arrow.png',class:"is-right" %></i>
-                    </span>
-                </button>
-              </div>
-              <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                <div class="dropdown-content">
-                  <%= link_to 'New', new_article_path, class:"dropdown-item" %>
-                  <a class="dropdown-item">
-                    Other dropdown item
-                  </a>
-                  <a href="#" class="dropdown-item">
-                    Active dropdown item
-                  </a>
-                  <a href="#" class="dropdown-item">
-                    Other dropdown item
-                  </a>
-                  <hr class="dropdown-divider">
-                    <%= link_to 'Log out', users_logout_path, method: :delete, class:"dropdown-item"%>
-                </div>
-              </div>
-            </div>
+            <%= link_to 'Log out', users_logout_path, method: :delete, class:"button is-light"%>
           </div>
         <% else %>
           <div class="buttons">
