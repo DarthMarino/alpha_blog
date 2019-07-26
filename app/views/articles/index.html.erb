@@ -5,6 +5,8 @@
 </div>
 
 <br>
-<%=render 'article', obj:@articles%>
-<%= pagy_bulma_nav(@pagy).html_safe %>
+<% unless @articles.blank? %>
+    <%=render 'article', obj:@articles%>
+    <%= pagy_bulma_nav(@pagy).html_safe %>
+<% end %>
 <br>
